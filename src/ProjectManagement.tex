@@ -1,0 +1,153 @@
+\documentclass[a4paper,12pt,twoside,openright,titlepage]{book}
+
+%Additional packages
+\usepackage[ascii]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[dutch,english]{babel}
+\usepackage{imakeidx}
+\usepackage{syntonly}
+\usepackage[official]{eurosym}
+%\usepackage[graphicx]
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{xurl}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue, pdftitle=, pdfauthor=, pdfsubject=, pdfkeywords=}
+\usepackage{tabularx}
+\usepackage{scrextend}
+\addtokomafont{labelinglabel}{\sffamily}
+\usepackage{listings}
+\usepackage{adjustbox}
+\usepackage{color}
+
+% Define colors
+\definecolor{ashgrey}{rgb}{0.7, 0.75, 0.71}
+
+% Listing style
+\lstset{
+  backgroundcolor=\color{ashgrey},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+}
+
+% Uncomment for production
+% \syntaxonly
+
+% Style
+\pagestyle{headings}
+
+% Turn on indexing
+\makeindex[intoc]
+
+% Define document
+\author{D. Leeuw, Wim Onrust}
+\title{Project Management}
+\date{\today\\v.0.3.0}
+
+\begin{document}
+\selectlanguage{dutch}
+
+\maketitle
+
+\copyright\ 2022 Dennis Leeuw, Wim Onrust\\
+
+\begin{figure}
+\includegraphics[width=0.3\textwidth]{CC-BY-SA-NC.png}
+\end{figure}
+
+\bigskip
+
+\input{src/licentie}
+
+%%%%%%%%%%%%%%%%%%%
+%%% Introductie %%%
+%%%%%%%%%%%%%%%%%%%
+
+\frontmatter
+%\chapter{Over dit Document}
+%\input{src/OverDitDocument}
+%\input{src/DocChanges_GUI}
+
+%%%%%%%%%%%%%%%%%
+%%% De inhoud %%%
+%%%%%%%%%%%%%%%%%
+\tableofcontents
+
+\mainmatter
+
+\chapter{Project Management}
+\input{src/pm_intro}
+\section{Aanvang}
+\input{src/pm_aanvang}
+
+\chapter{Gespreksverslag}
+\input{src/gesprek_intro}
+\section{Voorbereiding}
+\input{src/gesprek_voorbereiding}
+\section{Tijdens het gesprek}
+\input{src/gesprek_gesprek}
+\section{Gespreksverslag}
+\input{src/gesprek_verslag}
+
+\chapter{Behoefte Analyse}
+\input{src/ba_intro}
+\section{Stappenlan}
+\input{src/ba_stappen}
+\section{Informatie verzamelen}
+\input{src/ba_informatie_verzamelen}
+\subsection{Vragen stellen}
+\input{src/ba_vragen}
+\section{Doelbeschrijving}
+\input{src/ba_doelbeschrijving}
+\section{Probleembeschrijving}
+\input{src/ba_probleembeschrijving}
+\section{Interviewen}
+\input{src/ba_interviewen}
+\section{MoSCoW}
+\input{src/ba_moscow}
+\section{Template}
+\input{src/ba_template}
+
+\chapter{Funtioneel Ontwerp}
+\input{src/fo_intro}
+\section{Stappenplan}
+\input{src/fo_stappen}
+\section{Template}
+\input{src/fo_template}
+\section{Beoordeling}
+\input{src/fo_beoordeling}
+\section{Offerte}
+\input{src/offerte}
+
+\chapter{Technisch Ontwerp}
+\input{src/to_intro}
+\section{Stappenplan}
+\input{src/to_stappen}
+\section{Template}
+\input{src/to_template}
+\section{Akkoord}
+\input{src/to_ok}
+
+\chapter{Testplan}
+
+\chapter{Testrapport}
+\section{Goedkeuring}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%%% Index and End %%%
+%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+\printindex
+\end{document}
+
+%%% Last line %%%
